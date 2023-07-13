@@ -1,0 +1,48 @@
+.event{
+  position: relative;
+  border: 2px dashed black;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.title{
+  text-transform: uppercase;
+}
+
+.info{
+  display: flex;
+  align-items: center;
+}
+
+.icon{
+  display: block;
+  color: rgb(241, 125, 24);
+  margin-right: 5px;
+  
+}
+
+.chip{
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border-radius: 4px;
+  padding: 5px;
+
+  background-color: black;
+  color: wheat;
+  text-transform: uppercase;
+}
+
+.free{
+  position: absolute;
+  background-color: green;
+}
+
+.paid{
+  background-color: blue;
+}
+
+.vip{
+  background-color: orange;
+}
