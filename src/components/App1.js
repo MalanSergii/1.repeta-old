@@ -1,9 +1,11 @@
-import Counter from './counter/Counter';
+import Counter from './counter';
+import DropDown from './dropDown';
 
 const App = () => {
   return (
     <>
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      <DropDown></DropDown>
     </>
   );
 };

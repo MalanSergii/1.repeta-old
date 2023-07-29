@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import Controls from 'components/controls';
 
 class Counter extends Component {
-  state = {
+  static defaultProps = {
     value: 0,
+  };
+  state = {
+    value: this.props.value,
   };
 
   increaseCounter = () => {
@@ -18,13 +22,14 @@ class Counter extends Component {
   };
 
   render() {
+    const { value } = this.state;
     return (
       <div>
-        <span>Counter value: {this.state.value}</span>
-        <div>
-          <button onClick={this.increaseCounter}>increse</button>
-          <button onClick={this.decreaseCounter}>decrease</button>
-        </div>
+        <span>Counter value: {value}</span>
+        <Controls
+          increaseCounter={this.increaseCounter}
+          decreaseCounter={this.decreaseCounter}
+        ></Controls>
       </div>
     );
   }
