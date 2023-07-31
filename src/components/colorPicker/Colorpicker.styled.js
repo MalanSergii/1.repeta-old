@@ -19,8 +19,6 @@ export const ColorBox = styled.div`
     height: 60px;
     /* cursor: pointer; */
 
-    background-color: red;
-
     :not(:last-child) {
       margin-right: 20px;
     }

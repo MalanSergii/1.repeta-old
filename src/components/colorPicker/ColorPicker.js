@@ -1,19 +1,37 @@
 import { Component } from 'react';
-import colors from 'data/colorPickerOptions.json';
 import { ColorBox } from './Colorpicker.styled';
+import ColorlistItem from './colorListItem/ColorListItem.js/ColorlistItem';
+import colors from 'data/colorPickerOptions.json';
 
 class ColorPicker extends Component {
-  state = {};
+  state = {
+    activeIndex: 0,
+  };
+
+  handleButtonClick = i => {
+    this.setState({
+      activeIndex: i,
+    });
+  };
 
   render() {
     return (
       <ColorBox>
-        <p>curent color:</p>
-        <ul className="colorList">
-          {colors.map(item => (
-            <li className="color" color={item.color} key={item.label}></li>
+        <p>
+          curent color: {colors[this.state.activeIndex].label} {}
+        </p>
+        <div className="colorList">
+          {colors.map((item, index) => (
+            <ColorlistItem
+              activeIndex={this.state.activeIndex}
+              handleButtonClick={this.handleButtonClick}
+              color={item.color}
+              key={item.label}
+              index={index}
+              label={item.label}
+            ></ColorlistItem>
           ))}
-        </ul>
+        </div>
       </ColorBox>
     );
   }

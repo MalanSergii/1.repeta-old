@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Controls from 'components/controls';
+import Controls from 'components/counter/controls';
 
 class Counter extends Component {
   static defaultProps = {
