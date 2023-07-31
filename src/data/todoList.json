@@ -1,0 +1,7 @@
+[
+  {"id":"1", "text":"HTML/CSS","completed":true},
+  {"id":"2", "text":"JavaScript","completed":true},
+  {"id":"3", "text":"React","completed":false},
+  {"id":"4", "text":"Redux","completed":false} ,
+  {"id":"5", "text":"Clean the room","completed":false} 
+]
