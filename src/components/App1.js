@@ -7,7 +7,7 @@ import ToDoList from './todoList';
 // import Form from './form/Form';
 
 import initialTodos from 'data/todoList.json';
-
+import { nanoid } from 'nanoid';
 class App extends Component {
   state = {
     todos: initialTodos,
@@ -34,6 +34,21 @@ class App extends Component {
     }));
   };
 
+  addTask = text => {
+    const exist = this.state.todos.find(item => item.text === text);
+    if (text && !exist) {
+      this.setState(prev => ({
+        todos: [...prev.todos, { id: nanoid(), text: text, completed: false }],
+      }));
+    }
+    if (!text) {
+      alert('Add task please...');
+    }
+    if (exist) {
+      alert('this task already exist, try to give another name');
+    }
+  };
+
   render() {
     const done = this.state.todos.reduce((acc, { completed }) => (completed ? acc + 1 : acc), 0);
 
@@ -44,6 +59,7 @@ class App extends Component {
         {/* <ColorPicker></ColorPicker> */}
         <ToDoList
           onCheckboxChange={this.onCheckboxChange}
+          addTask={this.addTask}
           done={done}
           total={this.state.todos.length}
           removeToDos={this.removeToDos}
