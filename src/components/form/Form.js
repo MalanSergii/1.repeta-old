@@ -1,13 +1,18 @@
 import { Component } from 'react';
+
 const INITIAL_STATE = {
   name: '',
   password: '',
+  level: '',
+  agreement: false,
 };
 
 class Form extends Component {
   state = {
     name: '',
     password: '',
+    level: '',
+    agreement: false,
   };
 
   onInputChange = e => {
@@ -17,12 +22,16 @@ class Form extends Component {
     });
   };
 
+  onAgreementChange = () => {
+    this.setState(prev => ({
+      agreement: !prev.agreement,
+    }));
+  };
+
   onFormSubmit = e => {
     e.preventDefault();
     this.props.getDataFromForm(this.state);
-    this.setState({
-      INITIAL_STATE,
-    });
+    this.setState(INITIAL_STATE);
   };
 
   render() {
@@ -30,15 +39,61 @@ class Form extends Component {
     return (
       <form onSubmit={this.onFormSubmit}>
         <label>
-          name<input name="name" onChange={this.onInputChange} value={name}></input>
+          <input name="name" onChange={this.onInputChange} value={name}></input>
+          name
         </label>
         <br />
         <label>
-          password
           <input name="password" onChange={this.onInputChange} value={password}></input>
+          password
         </label>
         <br />
-        <button type="submit">submit</button>
+        <p>your level</p>
+        <label>
+          <input
+            name="level"
+            value="junior"
+            type="radio"
+            onChange={this.onInputChange}
+            checked={this.state.level === 'junior'}
+          ></input>
+          junior
+        </label>
+        <br />
+        <label>
+          <input
+            name="level"
+            value="middle"
+            type="radio"
+            onChange={this.onInputChange}
+            checked={this.state.level === 'middle'}
+          ></input>
+          middle
+        </label>
+        <br />
+        <label>
+          <input
+            name="level"
+            value="senior"
+            type="radio"
+            onChange={this.onInputChange}
+            checked={this.state.level === 'senior'}
+          ></input>
+          senior
+        </label>
+        <br />
+        <label>
+          <input
+            onChange={this.onAgreementChange}
+            type="checkbox"
+            name="agreement"
+            checked={this.state.agreement}
+          ></input>
+          Agreement
+        </label>
+        <button disabled={!this.state.agreement} type="submit">
+          submit
+        </button>
       </form>
     );
   }
