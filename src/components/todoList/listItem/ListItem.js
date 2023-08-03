@@ -1,12 +1,16 @@
-const ListItem = ({ id, text, completed, removeToDos }) => {
+import { Item } from './ListItem.styled';
+
+const ListItem = ({ id, text, completed, removeToDos, onCheckboxChange }) => {
   return (
-    <li>
-      <span>{text}</span>
+    <Item>
       <label>
-        <input type="checkbox"></input>
+        {text}
+        <input onChange={() => onCheckboxChange(id)} type="checkbox" checked={completed}></input>
       </label>
-      <button onClick={() => removeToDos(id)}>delete</button>
-    </li>
+      <button className="itemButton" onClick={() => removeToDos(id)}>
+        delete
+      </button>
+    </Item>
   );
 };
 

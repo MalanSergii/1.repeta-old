@@ -1,6 +1,6 @@
 import ListItem from './listItem';
 
-const ToDoList = ({ todos, removeToDos, total, done }) => {
+const ToDoList = ({ todos, removeToDos, total, done, onCheckboxChange }) => {
   return (
     <ul>
       <h3>To do List</h3>
@@ -13,6 +13,7 @@ const ToDoList = ({ todos, removeToDos, total, done }) => {
           removeToDos={removeToDos}
           completed={completed}
           key={id}
+          onCheckboxChange={onCheckboxChange}
         ></ListItem>
       ))}
     </ul>
