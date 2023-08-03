@@ -12,6 +12,7 @@ class App extends Component {
   state = {
     todos: initialTodos,
     formData: {},
+    filtered: '',
   };
 
   removeToDos = id => {
@@ -34,6 +35,12 @@ class App extends Component {
     }));
   };
 
+  filter = text => {
+    this.setState({
+      filtered: text,
+    });
+  };
+
   addTask = text => {
     const exist = this.state.todos.find(item => item.text === text);
     if (text && !exist) {
@@ -50,6 +57,10 @@ class App extends Component {
   };
 
   render() {
+    const normalizedFilter = this.state.filtered.toLowerCase();
+    const filteredData = this.state.todos.filter(item =>
+      item.text.toLowerCase().includes(normalizedFilter)
+    );
     const done = this.state.todos.reduce((acc, { completed }) => (completed ? acc + 1 : acc), 0);
 
     return (
@@ -58,6 +69,8 @@ class App extends Component {
         {/* <DropDown></DropDown> */}
         {/* <ColorPicker></ColorPicker> */}
         <ToDoList
+          filteredData={filteredData}
+          filter={this.filter}
           onCheckboxChange={this.onCheckboxChange}
           addTask={this.addTask}
           done={done}
