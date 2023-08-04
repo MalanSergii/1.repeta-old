@@ -2,12 +2,13 @@ import { Component } from 'react';
 // import ColorPicker from './colorPicker';
 // import Counter from './counter';
 // import DropDown from './dropDown';
-import ToDoList from './todoList';
+// import ToDoList from './todoList';
 // import Input from './input';
 // import Form from './form/Form';
 
 import initialTodos from 'data/todoList.json';
 import { nanoid } from 'nanoid';
+import LoginForm from './loginForm';
 class App extends Component {
   state = {
     todos: initialTodos,
@@ -57,18 +58,18 @@ class App extends Component {
   };
 
   render() {
-    const normalizedFilter = this.state.filtered.toLowerCase();
-    const filteredData = this.state.todos.filter(item =>
-      item.text.toLowerCase().includes(normalizedFilter)
-    );
-    const done = this.state.todos.reduce((acc, { completed }) => (completed ? acc + 1 : acc), 0);
+    // const normalizedFilter = this.state.filtered.toLowerCase();
+    // const filteredData = this.state.todos.filter(item =>
+    //   item.text.toLowerCase().includes(normalizedFilter)
+    // );
+    // const done = this.state.todos.reduce((acc, { completed }) => (completed ? acc + 1 : acc), 0);
 
     return (
       <>
         {/* <Counter></Counter> */}
         {/* <DropDown></DropDown> */}
         {/* <ColorPicker></ColorPicker> */}
-        <ToDoList
+        {/* <ToDoList
           filteredData={filteredData}
           filter={this.filter}
           onCheckboxChange={this.onCheckboxChange}
@@ -77,9 +78,10 @@ class App extends Component {
           total={this.state.todos.length}
           removeToDos={this.removeToDos}
           todos={this.state.todos}
-        ></ToDoList>
+        ></ToDoList> */}
         {/* <Input></Input> */}
         {/* <Form getDataFromForm={this.getDataFromForm}></Form> */}
+        <LoginForm></LoginForm>
       </>
     );
   }
