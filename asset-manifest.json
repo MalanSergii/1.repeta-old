@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/1.repeta-old/static/css/main.d75ac40d.css",
+    "main.js": "/1.repeta-old/static/js/main.1531b634.js",
+    "index.html": "/1.repeta-old/index.html",
+    "main.d75ac40d.css.map": "/1.repeta-old/static/css/main.d75ac40d.css.map",
+    "main.1531b634.js.map": "/1.repeta-old/static/js/main.1531b634.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d75ac40d.css",
+    "static/js/main.1531b634.js"
+  ]
+}
