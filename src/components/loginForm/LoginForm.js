@@ -1,6 +1,6 @@
-import { Field, Form, Formik, ErrorMessage } from 'formik';
+import { Field, Form, Formik } from 'formik';
 import { ErrorMess, Input } from './LoginForm.styled';
-import { object, string, number, date, InferType } from 'yup';
+import { object, string } from 'yup';
 
 const schema = object().shape({
   name: string().required('no no no'),
