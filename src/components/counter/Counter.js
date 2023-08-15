@@ -20,7 +20,7 @@ class Counter extends Component {
       value: prev.value - 1,
     }));
   };
-
+  componentDidUpdate(prevProps, prevState) {}
   render() {
     const { value } = this.state;
     return (
