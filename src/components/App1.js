@@ -13,9 +13,9 @@ import Modal from './modal';
 import LoginForm from './loginForm';
 import Clock from './clock/Clock';
 import IconButton from './iconButton/IconButton';
-import { ReactComponent as Cloud } from './icons/cloud-drizzle.svg';
-import { ReactComponent as Cofee } from './icons/coffee.svg';
-import { ReactComponent as YouTube } from './icons/youtube.svg';
+import { ReactComponent as Cloud } from 'icons/cloud-drizzle.svg';
+import { ReactComponent as Cofee } from 'icons/coffee.svg';
+import { ReactComponent as YouTube } from 'icons/youtube.svg';
 
 class App extends Component {
   state = {
@@ -121,7 +121,7 @@ class App extends Component {
             <Clock />
           </Modal>
         )} */}
-        <IconButton aria-label="1111">
+        {/* <IconButton aria-label="1111">
           <Cloud fill="red"></Cloud>
         </IconButton>
         <IconButton aria-label="22">
@@ -129,7 +129,7 @@ class App extends Component {
         </IconButton>
         <IconButton aria-label="33">
           <YouTube fill="orange"></YouTube>
-        </IconButton>
+        </IconButton> */}
       </>
     );
   }
