@@ -16,6 +16,8 @@ import IconButton from './iconButton/IconButton';
 import { ReactComponent as Cloud } from 'icons/cloud-drizzle.svg';
 import { ReactComponent as Cofee } from 'icons/coffee.svg';
 import { ReactComponent as YouTube } from 'icons/youtube.svg';
+import Player from './player';
+import Reader from './reader';
 
 class App extends Component {
   state = {
@@ -130,6 +132,8 @@ class App extends Component {
         <IconButton aria-label="33">
           <YouTube fill="orange"></YouTube>
         </IconButton> */}
+        {/* <Player></Player> */}
+        <Reader></Reader>
       </>
     );
   }

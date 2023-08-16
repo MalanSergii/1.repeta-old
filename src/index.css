@@ -17,3 +17,43 @@ code {
   --paid: #3f8ab5;
   --vip: #e06b11;
 }
+
+Base css *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ul,
+li {
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
